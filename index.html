@@ -9,66 +9,77 @@
 </head>
 <body>
      <div class="bg-stone-400 w-full min-h-screen ">
-        <nav class="bg-black py-6 text-center ">
-            <h1 class=" text-white text-5xl  font-bold hover:text-yellow-200 duration-300">Weather App Using Tailwind</h1>
+        <nav class="bg-black py-4 text-center ">
+            <h1 class=" text-white text-3xl  font-bold hover:text-yellow-200 duration-300 md:text-5xl md:py-4 lg:text-yellow-500 lg:py-1 lg:text-5xl">Weather App Using Tailwind</h1>
         </nav>
-        <section class=" bg-slate-100 flex  h-[full-2%] w-[98%]  m-auto mt-4 rounded-lg p-2">
-            <div class="w-[35%]  item-center justify-center mt-6">
-                <h2 class="text-blue-950 text-2xl">Enter City Name:</h2>
-                <input required id="input" class=" my-2 border-spacing-28 bg-black px-2 py-3 rounded-sm w-[95%] text-white " type="text" name="" id="" placeholder="eg-Bihar, India">
-                <button id="search-btn" class=" bg-green-900 w-[95%] px-2 py-3 rounded-sm w-[95%] text-white font-bold tracking-widest ">Search</button>
-                <div class="text-center text-2xl md:text-3xl md:my-4">-----or-----</div>
-                <button id="currLocationBtn" class=" bg-gray-600 w-[95%] px-2 py-3 rounded-sm w-[95%] text-white font-bold tracking-wide ">Click To Search For Current Location</button>
+        <section class=" bg-slate-100  h-[full-2%] w-[98%]  m-auto mt-2 rounded-lg p-2 lg:flex lg:gap-2">
+            <div class="w-[100%]  item-center mt-2 md:my-4 lg:w-[35%]">
+                <h2 class="text-blue-950 text-2xl md:text-4xl lg:text-xl">Enter City Name:</h2>
+                <input required id="input" class=" my-3 border-spacing-28 bg-black px-2 py-3 rounded-sm w-[100%] text-white md:px-4 md:py-4 md:text-2xl lg:px-2 lg:py-3 lg:text-lg" type="text" name="" id="" placeholder="eg-Bihar, India">
+                <button id="search-btn" class=" bg-green-900 px-2 py-3 rounded-sm w-[100%] text-white font-bold tracking-widest md:px-4 md:py-4 md:text-2xl lg:px-2 lg:py-3 lg:text-lg ">Search</button>
+                <div id="recentSearches" class="  my-3 border-spacing-28 bg-green-400 px-2 py-3 rounded-sm w-[100%] text-green-900 lg:px-2 lg:py-3 lg:text-lg hidden">
+                    <!-- <h3>Recent Searches</h3> -->
+                     <label class="text-blue-950 text-2xl pb-4 md:text-4xl lg:px-2 lg:py-3 lg:text-xl" for="searchList">Recent Searches:</label>
+                    <select name="" id="searchList" class=" my-1 border-spacing-28 bg-black px-2 py-3 rounded-sm w-[100%] text-white md:px-4 md:py-4 md:text-2xl lg:px-2 lg:py-3 lg:text-lg">
+                        
+                    </select>
+                </div>
+                <div class="text-center text-2xl my-3 md:text:4xl md:font-bold">-----or-----</div>
+                <button id="currLocationBtn" class=" bg-gray-600 w-[100%] px-2 py-3 rounded-sm text-white font-bold tracking-wide my-3 md:px-4 md:py-4 md:text-2xl lg:px-2 lg:py-3 lg:text-lg hover:bg-slate-900">Click To Search For Current Location</button>
+                
             </div>
-            <div class="flex flex-col w-[100%] ">
-                <div id="currWatherBox" class="flex bg-blue-600 w-[100%]  justify-between p-4 rounded-md">
+            <div class=" w-[100%]">
+                <div id="currWatherBox" class=" bg-blue-600 w-[100%]  justify-between p-3 rounded-md">
                     <div class="align-top" id="details">
-                        <h3 class="text-white text-2xl font-bold">_______ (______)</h3>
-                        <h4 class="text-white text-xl ">Temperature: ___°C</h4>
-                        <h4 class="text-white text-xl">Wind: ___ M/S</h4>
-                        <h4 class="text-white text-xl">Humidity: ___%</h4>
+                        <h3 class="text-white text-lg my-2 md:text-4xl md:my-6 lg:text-2xl">_______ (______)</h3>
+                        <h4 class="text-white text-base  md:text-2xl md:my-1 lg:text-xl">Temp: ___°C</h4>
+                        <h4 class="text-white text-base md:text-2xl md:my-1 lg:text-xl">Wind: ___ M/S</h4>
+                        <h4 class="text-white text-base md:text-2xl md:my-1 lg:text-xl">Humidity: ___%</h4>
                     </div>
                     
                 </div>
-                <div class="w-[100%] mt-6">
-                    <h3 class="mb-4 text-black text-3xl font-semibold text-center">5-Day Forcast</h3>
-                    <div id="weatherCards" class=" flex wrap gap-2">
-                        <div  class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[25%]">
-                            <h3 class="text-white text-2xl font-bold mb-5" >(________)</h3>
-                            <h4 class="text-white text-xl ">Temperature: ___°C</h4>
-                            <h4 class="text-white text-xl">Wind: ___ M/S</h4>
-                            <h4 class="text-white text-xl">Humidity: ___%</h4>
+                <div class="w-[100%] mt-6 >
+                    <h3 class="mb-4 text-black text-3xl font-semibold text-center md:text-5xl lg:font-bold"></h3>
+                    <h3 class="mb-4 text-black text-3xl font-semibold text-center md:text-5xl lg:font-semibold">5-Day Forcast</h3>
+                    <div id="weatherCards" class="gap-2 lg:flex ">
+                        <div  class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[100%]">
+                            <h3 class="text-white text-2xl font-bold mb-5 md:text-4xl md:my-6" >(________)</h3>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Temp: ___°C</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Wind: ___ M/S</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Humidity: ___%</h4>
                         </div>
-                        <div id="weatherCard" class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[25%]">
-                            <h3 class="text-white text-2xl font-bold mb-5" >(________)</h3>
-                            <h4 class="text-white text-xl ">Temperature: ___°C</h4>
-                            <h4 class="text-white text-xl">Wind: ___ M/S</h4>
-                            <h4 class="text-white text-xl">Humidity: ___%</h4>
+                        <div  class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[100%]">
+                            <h3 class="text-white text-2xl font-bold mb-5 md:text-4xl md:my-6" >(________)</h3>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Temp: ___°C</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Wind: ___ M/S</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Humidity: ___%</h4>
                         </div>
-                        <div id="weatherCard" class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[25%]">
-                            <h3 class="text-white text-2xl font-bold mb-5" >(________)</h3>
-                            <h4 class="text-white text-xl ">Temperature: ___°C</h4>
-                            <h4 class="text-white text-xl">Wind: ___ M/S</h4>
-                            <h4 class="text-white text-xl">Humidity: ___%</h4>
+                        <div  class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[100%]">
+                            <h3 class="text-white text-2xl font-bold mb-5 md:text-4xl md:my-6" >(________)</h3>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Temp: ___°C</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Wind: ___ M/S</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Humidity: ___%</h4>
                         </div>
-                        <div id="weatherCard" class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[25%]">
-                            <h3 class="text-white text-2xl font-bold mb-5" >(________)</h3>
-                            <h4 class="text-white text-xl ">Temperature: ___°C</h4>
-                            <h4 class="text-white text-xl">Wind: ___ M/S</h4>
-                            <h4 class="text-white text-xl">Humidity: ___%</h4>
+                        <div  class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[100%]">
+                            <h3 class="text-white text-2xl font-bold mb-5 md:text-4xl md:my-6" >(________)</h3>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Temp: ___°C</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Wind: ___ M/S</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Humidity: ___%</h4>
                         </div>
-                        <div id="weatherCard" class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[25%]">
-                            <h3 class="text-white text-2xl font-bold mb-5" >(________)</h3>
-                            <h4 class="text-white text-xl ">Temperature: ___°C</h4>
-                            <h4 class="text-white text-xl">Wind: ___ M/S</h4>
-                            <h4 class="text-white text-xl">Humidity: ___%</h4>
+
+                        <div  class="mb-6 bg-gray-400 inline-block  py-4 px-2 rounded-md w-[100%]">
+                            <h3 class="text-white text-2xl font-bold mb-5 md:text-4xl md:my-6" >(________)</h3>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Temp: ___°C</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Wind: ___ M/S</h4>
+                            <h4 class="text-white text-xl  md:text-2xl md:my-1">Humidity: ___%</h4>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </section>
-        <nav class="bg-black mt-4 py-6 text-center">
-            <h1 class=" text-white text-5xl md:text-3xl font-bold ">Weather App End</h1>
+        <nav class="bg-black mt-4 py-4 text-center">
+            <h1 class=" text-white text-3xl md:text-3xl font-bold ">Weather App End</h1>
         </nav>
      </div>
     <script src="script.js"></script>
