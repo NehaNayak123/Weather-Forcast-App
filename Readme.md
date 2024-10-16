@@ -16,5 +16,5 @@ This is a simple weather forecast application that uses the OpenWeatherMap API t
 
 ## Hosting
 1. Hosted on Netlify.
-2. You can see Application by clicking given link
+2. You can see Application by clicking given link "https://weather-forcast-app-tailwind.netlify.app/"
 
